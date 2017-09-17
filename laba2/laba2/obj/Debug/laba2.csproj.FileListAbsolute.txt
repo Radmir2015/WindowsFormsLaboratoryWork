@@ -1,0 +1,11 @@
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\bin\Debug\laba2.exe.config
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\bin\Debug\laba2.exe
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\bin\Debug\laba2.pdb
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.csprojResolveAssemblyReference.cache
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.Form1.resources
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.Properties.Resources.resources
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.csproj.GenerateResource.Cache
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.csproj.CoreCompileInputs.cache
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.exe
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.pdb
+D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.Form2.resources
