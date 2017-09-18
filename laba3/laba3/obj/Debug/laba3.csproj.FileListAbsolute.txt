@@ -17,3 +17,13 @@ C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLabo
 C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba3\laba3\obj\Debug\laba3.csproj.GenerateResource.Cache
 C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba3\laba3\bin\Debug\laba3.exe
 C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba3\laba3\bin\Debug\laba3.pdb
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\bin\Debug\laba3.exe.config
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\bin\Debug\laba3.exe
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\bin\Debug\laba3.pdb
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.csprojResolveAssemblyReference.cache
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.Form1.resources
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.Properties.Resources.resources
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.csproj.GenerateResource.Cache
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.csproj.CoreCompileInputs.cache
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.exe
+D:\Документы\VisualStudio\C#Projects\university\laba3\laba3\obj\Debug\laba3.pdb

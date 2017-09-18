@@ -26,7 +26,7 @@ namespace laba3
                 return "error";
         }
 
-        public Tuple<double, double, int, int> getArgs()
+        public Tuple<double, double, int, int> getArgs(int param = 2)
         {
             string text1 = textBox1.Text.Trim().ToLower();
             string text2 = textBox2.Text.Trim().ToLower();
@@ -53,7 +53,8 @@ namespace laba3
             {
                 if (!double.TryParse(textBox2.Text.Replace(".", ","), out arg2))
                 {
-                    MessageBox.Show("Неправильный тип в аргументе 2");
+                    if (param == 2)
+                        MessageBox.Show("Неправильный тип в аргументе 2");
                     argBool2 = -2;
                 }
                 else
@@ -166,14 +167,13 @@ namespace laba3
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "bools")
+            var args = getArgs(1);
+            if (args.Item3 >= 0)
             {
                 var bool1 = true ? args.Item3 == 1 : false;
-                var bool2 = true ? args.Item4 == 1 : false;
                 listBox1.Items.Insert(0, (!bool1).ToString());
             }
-            else if (CheckIfNumbersOrBool(args) == "numbers")
+            else if (args.Item3 == -1)
                 listBox1.Items.Insert(0, (~(int)args.Item1).ToString());
         }
 
@@ -188,6 +188,46 @@ namespace laba3
             }
             else if (CheckIfNumbersOrBool(args) == "numbers")
                 listBox1.Items.Insert(0, ((int)args.Item1 ^ (int)args.Item2).ToString());
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var args = getArgs(1);
+            if (args.Item3 == -1)
+            {
+                listBox1.Items.Insert(0, "sin(" + args.Item1 + ") = " + Math.Sin(args.Item1).ToString());
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            var args = getArgs(1);
+            if (args.Item3 == -1)
+            {
+                listBox1.Items.Insert(0, "tan(" + args.Item1 + ") = " + Math.Tan(args.Item1).ToString());
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            var args = getArgs(1);
+            if (args.Item3 == -1)
+            {
+                listBox1.Items.Insert(0, "e ^ " + args.Item1 + " = " + Math.Exp(args.Item1).ToString());
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            var args = getArgs(1);
+            if (args.Item3 == -1)
+            {
+                var log2 = Math.Log(args.Item1) / Math.Log(2);
+                if ((int)log2 == log2)
+                    listBox1.Items.Insert(0, ((int)log2 == log2).ToString() + ": 2 ^ " + log2.ToString() + " = " + args.Item1.ToString());
+                else
+                    listBox1.Items.Insert(0, ((int)log2 == log2).ToString());
+            }  
         }
 
         private void button15_Click(object sender, EventArgs e)
