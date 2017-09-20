@@ -15,7 +15,7 @@ namespace laba3
         public double arg1, arg2;
         public int argBool1 = -1, argBool2 = -1;
 
-        public string CheckIfNumbersOrBool(Tuple<double, double, int, int> arguments) // -1 - numbers; 0, 1 - bools
+        public string CheckIfNumbersOrBool(Tuple<double, double, int, int> arguments, string expected) // -1 - numbers; 0, 1 - bools
         {
             var args = arguments;
             if (args.Item3 == -1 && args.Item4 == -1)
@@ -23,7 +23,19 @@ namespace laba3
             else if (args.Item3 >= 0 && args.Item4 >= 0)
                 return "bools";
             else
-                return "error";
+                if (expected == "numbers")
+                {
+                    if (args.Item3 != -1) return "error in 1";
+                    else if (args.Item4 != -1) return "error in 2";
+                    else return "error";
+                }
+                else if (expected == "bools")
+                {
+                    if (args.Item3 < 0) return "error in 1";
+                    else if (args.Item4 < 0) return "error in 2";
+                    else return "error";
+                }
+                else return "error";
         }
 
         public Tuple<double, double, int, int> getArgs(int param = 2)
@@ -72,97 +84,102 @@ namespace laba3
         private void button1_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 + args.Item2).ToString());
+            var type = CheckIfNumbersOrBool(args, "numbers");
+            if (type == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " + " + args.Item2.ToString() + " = " + (args.Item1 + args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 - args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " - " + args.Item2.ToString() + " = " + (args.Item1 - args.Item2).ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 * args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " * " + args.Item2.ToString() + " = " + (args.Item1 * args.Item2).ToString());
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 / args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " / " + args.Item2.ToString() + " = " + (args.Item1 / args.Item2).ToString());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 % args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " % " + args.Item2.ToString() + " = " + (args.Item1 % args.Item2).ToString());
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 > args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " > " + args.Item2.ToString() + " = " + (args.Item1 > args.Item2).ToString());
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 < args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " < " + args.Item2.ToString() + " = " + (args.Item1 < args.Item2).ToString());
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 >= args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " >= " + args.Item2.ToString() + " = " + (args.Item1 >= args.Item2).ToString());
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 <= args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " <= " + args.Item2.ToString() + " = " + (args.Item1 <= args.Item2).ToString());
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, (args.Item1 == args.Item2).ToString());
+            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " == " + args.Item2.ToString() + " = " + (args.Item1 == args.Item2).ToString());
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "bools")
+            if (CheckIfNumbersOrBool(args, "bools") == "bools")
             {
                 var bool1 = true ? args.Item3 == 1 : false;
                 var bool2 = true ? args.Item4 == 1 : false;
-                listBox1.Items.Insert(0, ((bool1 && bool2).ToString()));
+                listBox1.Items.Insert(0, bool1.ToString() + " && " + bool2.ToString() + " = " + ((bool1 && bool2).ToString()));
             }
-            else if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, ((int)args.Item1 & (int)args.Item2).ToString());
+            else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " & " + args.Item2.ToString() + " = " + ((int)args.Item1 & (int)args.Item2).ToString());
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "bools")
+            if (CheckIfNumbersOrBool(args, "bools") == "bools")
             {
                 var bool1 = true ? args.Item3 == 1 : false;
                 var bool2 = true ? args.Item4 == 1 : false;
-                listBox1.Items.Insert(0, (bool1 || bool2).ToString());
+                listBox1.Items.Insert(0, bool1.ToString() + " || " + bool2.ToString() + " = " + (bool1 || bool2).ToString());
             }
-            else if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, ((int)args.Item1 | (int)args.Item2).ToString());
+            else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " | " + args.Item2.ToString() + " = " + ((int)args.Item1 | (int)args.Item2).ToString());
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -171,23 +188,23 @@ namespace laba3
             if (args.Item3 >= 0)
             {
                 var bool1 = true ? args.Item3 == 1 : false;
-                listBox1.Items.Insert(0, (!bool1).ToString());
+                listBox1.Items.Insert(0, "!" + bool1.ToString() + " = " + (!bool1).ToString());
             }
             else if (args.Item3 == -1)
-                listBox1.Items.Insert(0, (~(int)args.Item1).ToString());
+                listBox1.Items.Insert(0, "~" + args.Item1.ToString() + " = " + (~(int)args.Item1).ToString());
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args) == "bools")
+            if (CheckIfNumbersOrBool(args, "bools") == "bools")
             {
                 var bool1 = true ? args.Item3 == 1 : false;
                 var bool2 = true ? args.Item4 == 1 : false;
-                listBox1.Items.Insert(0, (bool1 ^ bool2).ToString());
+                listBox1.Items.Insert(0, bool1.ToString() + " ^ " + bool2.ToString() + " = " + (bool1 ^ bool2).ToString());
             }
-            else if (CheckIfNumbersOrBool(args) == "numbers")
-                listBox1.Items.Insert(0, ((int)args.Item1 ^ (int)args.Item2).ToString());
+            else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+                listBox1.Items.Insert(0, args.Item1.ToString() + " ^ " + args.Item2.ToString() + " = " + ((int)args.Item1 ^ (int)args.Item2).ToString());
         }
 
         private void button17_Click(object sender, EventArgs e)
