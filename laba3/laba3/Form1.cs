@@ -96,64 +96,109 @@ namespace laba3
         private void button2_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+            var type = CheckIfNumbersOrBool(args, "numbers");
+            if (type == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " - " + args.Item2.ToString() + " = " + (args.Item1 - args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var args = getArgs();
-            if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
+            var type = CheckIfNumbersOrBool(args, "numbers");
+            if (type == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " * " + args.Item2.ToString() + " = " + (args.Item1 * args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " / " + args.Item2.ToString() + " = " + (args.Item1 / args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " % " + args.Item2.ToString() + " = " + (args.Item1 % args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " > " + args.Item2.ToString() + " = " + (args.Item1 > args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " < " + args.Item2.ToString() + " = " + (args.Item1 < args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " >= " + args.Item2.ToString() + " = " + (args.Item1 >= args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " <= " + args.Item2.ToString() + " = " + (args.Item1 <= args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             var args = getArgs();
+            var type = CheckIfNumbersOrBool(args, "numbers");
             if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " == " + args.Item2.ToString() + " = " + (args.Item1 == args.Item2).ToString());
+            else if (type == "bools")
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            else if (type.StartsWith("error in"))
+                MessageBox.Show("Нечисловое значение в аргументе " + (type == "error in 1" ? "1" : "2"));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -167,6 +212,8 @@ namespace laba3
             }
             else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " & " + args.Item2.ToString() + " = " + ((int)args.Item1 & (int)args.Item2).ToString());
+            else
+                MessageBox.Show("Оба аргумента должны быть либо числовыми, либо логическими");
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -180,6 +227,8 @@ namespace laba3
             }
             else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " | " + args.Item2.ToString() + " = " + ((int)args.Item1 | (int)args.Item2).ToString());
+            else
+                MessageBox.Show("Оба аргумента должны быть либо числовыми, либо логическими");
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -205,6 +254,8 @@ namespace laba3
             }
             else if (CheckIfNumbersOrBool(args, "numbers") == "numbers")
                 listBox1.Items.Insert(0, args.Item1.ToString() + " ^ " + args.Item2.ToString() + " = " + ((int)args.Item1 ^ (int)args.Item2).ToString());
+            else
+                MessageBox.Show("Оба аргумента должны быть либо числовыми, либо логическими");
         }
 
         private void button17_Click(object sender, EventArgs e)
