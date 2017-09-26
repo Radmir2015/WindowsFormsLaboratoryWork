@@ -52,5 +52,35 @@ namespace laba4
             }
             label1.Text = "Массив: " + string.Join(", ", staticArray);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Массив: пуст";
+            staticArray = new int[10];
+            cxS = 0;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label2.Text = "Массив: пуст";
+            dinamicArray = new int[0];
+            //Array.Clear(dinamicArray, 0, dinamicArray.Length);
+        }
+
+        public void showArrayInfo(int[] arr, string name)
+        {
+            MessageBox.Show(String.Format("Sum of all elems ({4}) = {0}\n3 Max elements = {1}\nMultiply even idx = {2}\nSum elem > average = {3}",
+                arr.Sum(),
+                String.Join(", ", arr.OrderByDescending(x => x).Take(3)),
+                arr.Where((x, ind) => ind % 2 == 0).Aggregate(1, (acc, x) => acc * x),
+                arr.Where(x => x > arr.Average()).Sum(),
+                name), String.Format("Info for {0}", name));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            showArrayInfo(staticArray, "staticArray");
+            showArrayInfo(dinamicArray, "dinamicArray");
+        }
     }
 }
