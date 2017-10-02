@@ -69,9 +69,10 @@ namespace laba4
 
         public void showArrayInfo(int[] arr, string name)
         {
-            MessageBox.Show(String.Format("Sum of all elems ({4}) = {0}\n3 Max elements = {1}\nMultiply even idx = {2}\nSum elem > average = {3}",
+            MessageBox.Show(String.Format("Sum of all elems ({5}) = {0}\n3 Max elements = {1}\nSum of 3 max elems = {2}\nMultiply even idx = {3}\nSum elem > average = {4}",
                 arr.Sum(),
                 String.Join(", ", arr.OrderByDescending(x => x).Take(3)),
+                arr.OrderByDescending(x => x).Take(3).Sum(),
                 arr.Where((x, ind) => ind % 2 == 0).Aggregate(1, (acc, x) => acc * x),
                 arr.Where(x => x > arr.Average()).Sum(),
                 name), String.Format("Info for {0}", name));
