@@ -265,6 +265,10 @@ namespace laba3
             {
                 listBox1.Items.Insert(0, "sin(" + args.Item1 + ") = " + Math.Sin(args.Item1).ToString());
             }
+            else
+            {
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            }
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -274,6 +278,10 @@ namespace laba3
             {
                 listBox1.Items.Insert(0, "tan(" + args.Item1 + ") = " + Math.Tan(args.Item1).ToString());
             }
+            else
+            {
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -282,6 +290,10 @@ namespace laba3
             if (args.Item3 == -1)
             {
                 listBox1.Items.Insert(0, "e ^ " + args.Item1 + " = " + Math.Exp(args.Item1).ToString());
+            }
+            else
+            {
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
             }
         }
 
@@ -295,7 +307,11 @@ namespace laba3
                     listBox1.Items.Insert(0, ((int)log2 == log2).ToString() + ": 2 ^ " + log2.ToString() + " = " + args.Item1.ToString());
                 else
                     listBox1.Items.Insert(0, ((int)log2 == log2).ToString());
-            }  
+            }
+            else
+            {
+                MessageBox.Show("Необходим числовой тип, обнаружен логический");
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
