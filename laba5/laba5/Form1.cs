@@ -117,7 +117,7 @@ namespace laba5
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ListViewShow(database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox5.Text).ToList(), true);
+            ListViewShow(database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox6.Text).ToList(), true);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -127,9 +127,9 @@ namespace laba5
 
         private void button7_Click(object sender, EventArgs e)
         {
-            foreach (var item in listView1.SelectedItems)
+            foreach (ListViewItem item in listView1.SelectedItems)
             {
-                //database.Remove(item.Tag);
+                database.Remove((Student)item.Tag);
             }
             ListViewShow(database, true);
         }
