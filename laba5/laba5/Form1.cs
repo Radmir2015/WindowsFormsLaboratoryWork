@@ -94,30 +94,45 @@ namespace laba5
             return newStudent;
         }
 
+        public void UpdateCounters(List<Student> db, int CountMode = 0)
+        {
+            if (CountMode == 0) label8.Text = "Всего элементов в базе: " + db.Count();
+            else if (CountMode == 1) label9.Text = "Найденных элементов: " + db.Count();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CreateStudentStruct();
             ListViewShow(database, true);
+            UpdateCounters(database);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListViewShow(database.Where(x => x.lastName == textBox1.Text).ToList(), true);
+            var total = database.Where(x => x.lastName == textBox1.Text).ToList();
+            ListViewShow(total, true);
+            UpdateCounters(total, 1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ListViewShow(database.Where(x => x.faculty == textBox6.Text).ToList(), true);
+            var total = database.Where(x => x.faculty == textBox6.Text).ToList();
+            ListViewShow(total, true);
+            UpdateCounters(total, 1);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ListViewShow(database.Where(x => x.group == textBox5.Text).ToList(), true);
+            var total = database.Where(x => x.group == textBox5.Text).ToList();
+            ListViewShow(total, true);
+            UpdateCounters(total, 1);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ListViewShow(database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox6.Text).ToList(), true);
+            var total = database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox6.Text).ToList();
+            ListViewShow(total, true);
+            UpdateCounters(total, 1);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -132,6 +147,7 @@ namespace laba5
                 database.Remove((Student)item.Tag);
             }
             ListViewShow(database, true);
+            UpdateCounters(database);
         }
     }
 }
