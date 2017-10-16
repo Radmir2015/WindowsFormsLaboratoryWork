@@ -74,5 +74,24 @@ namespace laba2
             newForm.Show();
             newForm.form1 = this;
         }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            switch (direction)
+            {
+                case Direction.Right:
+                    label1.Top = 0;
+                    break;
+                case Direction.Down:
+                    label1.Left = ClientRectangle.Width - label1.Width;
+                    break;
+                case Direction.Left:
+                    label1.Top = ClientRectangle.Height - label1.Height;
+                    break;
+                case Direction.Up:
+                    label1.Left = 0;
+                    break;
+            }
+        }
     }
 }

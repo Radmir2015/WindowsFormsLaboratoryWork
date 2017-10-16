@@ -9,3 +9,13 @@ D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.csproj
 D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.exe
 D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.pdb
 D:\Документы\VisualStudio\C#Projects\laba2\laba2\obj\Debug\laba2.Form2.resources
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\bin\Debug\laba2.exe.config
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.exe
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.pdb
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\bin\Debug\laba2.exe
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\bin\Debug\laba2.pdb
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.csprojResolveAssemblyReference.cache
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.Form1.resources
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.Form2.resources
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.Properties.Resources.resources
+C:\Users\17i0260\Documents\Visual Studio 2012\Projects\projects\WindowsFormsLaboratoryWork\laba2\laba2\obj\Debug\laba2.csproj.GenerateResource.Cache
