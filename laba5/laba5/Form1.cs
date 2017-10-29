@@ -28,6 +28,8 @@ namespace laba5
 
         List<Student> database = new List<Student>();
 
+        List<Student> total = new List<Student>();
+
         public void ListViewShow(Student obj, bool needClear = false)
         {
             if (needClear)
@@ -105,38 +107,40 @@ namespace laba5
             CreateStudentStruct();
             ListViewShow(database, true);
             UpdateCounters(database);
+            total = database.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var total = database.Where(x => x.lastName == textBox1.Text).ToList();
+            total = database.Where(x => x.lastName == textBox1.Text).ToList();
             ListViewShow(total, true);
             UpdateCounters(total, 1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var total = database.Where(x => x.faculty == textBox6.Text).ToList();
+            total = database.Where(x => x.faculty == textBox6.Text).ToList();
             ListViewShow(total, true);
             UpdateCounters(total, 1);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var total = database.Where(x => x.group == textBox5.Text).ToList();
+            total = database.Where(x => x.group == textBox5.Text).ToList();
             ListViewShow(total, true);
             UpdateCounters(total, 1);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var total = database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox6.Text).ToList();
+            total = database.Where(x => x.studyDirection == textBox7.Text).Where(x => x.faculty != textBox6.Text).ToList();
             ListViewShow(total, true);
             UpdateCounters(total, 1);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            total = database.ToList();
             ListViewShow(database.ToList(), true);
         }
 
@@ -145,9 +149,10 @@ namespace laba5
             foreach (ListViewItem item in listView1.SelectedItems)
             {
                 database.Remove((Student)item.Tag);
+                total.Remove((Student)item.Tag);
             }
-            ListViewShow(database, true);
-            UpdateCounters(database);
+            ListViewShow(total, true);
+            UpdateCounters(total);
         }
     }
 }
