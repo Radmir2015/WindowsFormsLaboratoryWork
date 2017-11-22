@@ -36,6 +36,9 @@ namespace laba7
             {
                 SmallData data = new SmallData();
                 SmallQueue.Enqueue(data);
+            }
+            for (var i = 0; i < 25000; i++)
+            {
                 SmallQueue.Dequeue();
             }
             msTest1 = Environment.TickCount - time;
@@ -47,6 +50,9 @@ namespace laba7
             {
                 LargeData data = new LargeData();
                 LargeQueue.Enqueue(data);
+            }
+            for (var i = 0; i < 25000; i++)
+            {
                 LargeQueue.Dequeue();
             }
             msTest2 = Environment.TickCount - time;
